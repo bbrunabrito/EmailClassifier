@@ -1,5 +1,5 @@
 
-#Como usar o script?
+###Como usar o script?
 
 Opcional: criar um ambiente virtual em python para baixar os pacotes (tutorial -  https://www.youtube.com/watch?v=m1TYpvIYm74&t=419s)
 1) atualizar o pip com: pip install --upgrade pip
