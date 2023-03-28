@@ -40,15 +40,23 @@ def searchStringMessage(service, userID, searchString):
         print("ocorreu um erro: " + error) 
 
 def viewMessage(service, userID, msgID):
+    """
+    Esta função mostra os emails presente na lista de ID
+    Args:
+        service: autenticação da API
+        userID: id do usuário, no caso, o cliente, será sempre "me"(eu)
+        msgID: iD do email em questão
+    Returns: os emails em sua parte texto e html
+    """
     try:
-        message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #returna a mensagem em formato raw codificado em base64
+        message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #retorna a mensagem em formato raw codificado em base64
         msgStr = base64.urlsafe_b64decode(message['raw'].encode('ascii'))
         mime_msg = email.message_from_bytes(msgStr)
                
         contentType = mime_msg.get_content_maintype()
         if contentType == 'multipart':
             for part in mime_msg.get_payload():
-                if part.get_content_maintype() == 'text/plain':
+                if part.get_content_maintype() == 'text':
                     print(part.get_payload())
         elif contentType == 'text':
             print(mime_msg.get_payload())
@@ -81,7 +89,7 @@ def auth():
 
 service = auth()
 userID = 'me'    
-q = "reembolso" 
+q = "canva" 
 
 IDs = searchStringMessage(service, userID, q)
 
