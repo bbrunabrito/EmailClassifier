@@ -129,7 +129,7 @@ print(IDs)
 
 #visualizar as mensagens de cada ID.
 for i in IDs:
-    print(viewMessageSnippet(service, userID, i))
+    viewMessageSnippet(service, userID, i)
 
 for i in IDs:
-    print(viewMessage(service, userID, i))
+    viewMessage(service, userID, i)
