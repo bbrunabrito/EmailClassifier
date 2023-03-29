@@ -47,7 +47,7 @@ def viewMessage(service, userID, msgID):
         service: autenticação da API
         userID: id do usuário, no caso, o cliente, será sempre "me"(eu)
         msgID: iD da mensagem em questão
-    Returns: os emails em sua parte texto e html
+    Returns: o email em sua parte texto e html
     """
     try:
         message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #retorna a mensagem em formato raw codificado em base64
@@ -73,7 +73,7 @@ def viewMessageSnippet(service, userID, msgID):
         service: autenticação da API
         userID: id do usuário, no caso, o cliente, será sempre "me"(eu)
         msgID: iD da mensagem em questão
-    Returns: os emails em sua parte texto e html
+    Returns: o snippet do email
     """
     try:
         message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #retorna a mensagem em formato raw codificado em base64
