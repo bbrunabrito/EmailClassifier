@@ -27,19 +27,21 @@ service = build('gmail', 'v1', credentials=creds)
 
 # CRIAR UMA CATEGORIA
 label_body = {
-    "name": "Reembolso",
+    "name": "NOME_DA_CATEGORIA",
     "messageListVisibility": "show",
     "labelListVisibility": "labelShow",
 }
 
-service.users().labels().create(userId = 'me', body = label_body).execute()
+categoria = service.users().labels().create(userId='me', body=label_body).execute()
 
-# LISTAR EMAILS QUE TEM 'REEMBOLSO' NO ASSUNTO
-service.users().messages().list(userId = 'me', q = 'subject:(Reembolso)', maxResults = 10).execute()
 
-# ROTULAR EMAIL NA CATEGORIA CRIADA
-label_body = {
-    'removeLabelIds': ['IMPORTANT', 'CATEGORY_UPDATES', 'INBOX'],
-    'addLabelIds': ['Label_1']
-}
-service.users().messages().modify(userId='me', id='1872a5edd6237caf', body=label_body ).execute()
+# LISTAR EMAILS QUE TEM A PALAVRA QUE DESEJA FILTRAR NO ASSUNTO
+mensagens = service.users().messages().list(userId='me', q='subject:(PALAVRA)', maxResults=10).execute()
+
+# ROTULAR EMAILS NA CATEGORIA CRIADA
+for mensagem in mensagens['messages']:
+    label_body = {
+        'removeLabelIds': ['IMPORTANT', 'CATEGORY_UPDATES', 'INBOX'],
+        'addLabelIds': [categoria['id']]
+    }
+    service.users().messages().modify(userId='me', id=mensagem['id'], body=label_body).execute()
