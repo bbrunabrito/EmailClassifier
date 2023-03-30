@@ -61,7 +61,7 @@ https://developers.google.com/gmail/api/reference/rest/v1/users.messages/get
 
 https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list
 
-#### Lista as mensagens na caixa de email com base no termo de pesquisa
+#### Uma mensagem de email
 
 ```
   users.messages.list
