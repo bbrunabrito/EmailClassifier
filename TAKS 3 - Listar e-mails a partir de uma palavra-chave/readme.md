@@ -77,17 +77,23 @@ https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list
 
 # Funções
 
-### searchStringMessage(service, userID, searchString)
-procura os emails com o termo específico e retorna uma lista com o ID dos emails
-
-
-### viewMessageSnippet(service, userID, msgID)
-Exibe o conteúdo do email, o assunto e o snippet.
-
-### viewMessage(service, userID, msgID)
-Exibe o conteúdo do email, em fullbody
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `userID`      | `string` | O ID do usuário *userId* |
+| `msgID`      | `string` | O ID da mensagem de email *id* |
+| `service`      | `object` | retorno da função *auth()* |
+| `searchString`      | `object` | parâmetro *q*, para pesquisar |
 
 ### auth()
-realiza a autenticação com a API e retorna um objeto service para futuras chamadas da API
+* realiza a autenticação com a API e retorna um objeto service para futuras chamadas da API
+
+### searchStringMessage(service, userID, searchString)
+* procura os emails com o termo específico e retorna uma lista com o ID dos emails
+
+### viewMessageSnippet(service, userID, msgID)
+* Exibe o conteúdo do email, o assunto e o snippet.
+
+### viewMessage(service, userID, msgID)
+* Exibe o conteúdo do email, em fullbody
 
 
