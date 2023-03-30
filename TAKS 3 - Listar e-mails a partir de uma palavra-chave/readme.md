@@ -35,6 +35,20 @@ q = "problema" #altere aqui
 ## API Reference
 recursos utilizados da API do Gmail
 
+#### Uma mensagem de email
+
+```
+  users.messages
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | The immutable ID of the message. |
+| `snippet`      | `string` | A short part of the message text. |
+| `raw`      | `string` | The entire email message in an RFC 2822 formatted and base64url encoded string. Returned in messages.get and drafts.get responses when the format=RAW parameter is supplied. A base64-encoded string. |
+
+https://developers.google.com/gmail/api/reference/rest/v1/users.messages
+
 #### Receba uma mensagem específica
 
 ```
@@ -60,21 +74,6 @@ https://developers.google.com/gmail/api/reference/rest/v1/users.messages/get
 | `q`      | `string` | Only return messages matching the specified query. Supports the same query format as the Gmail search box. Parameter cannot be used when accessing the api using the gmail.metadata scope. |
 
 https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list
-
-#### Uma mensagem de email
-
-```
-  users.messages.list
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | The immutable ID of the message. |
-| `snippet`      | `string` | A short part of the message text. |
-| `raw`      | `string` | The entire email message in an RFC 2822 formatted and base64url encoded string. Returned in messages.get and drafts.get responses when the format=RAW parameter is supplied. A base64-encoded string. |
-
-https://developers.google.com/gmail/api/reference/rest/v1/users.messages
-
 
 # Funções
 
