@@ -9,6 +9,7 @@ import base64
 import email
 
 # If modifying these scopes, delete the file token.pickle.
+#Escopo de permissão da API
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 def searchStringMessage(service, userID, searchString):
@@ -37,7 +38,7 @@ def searchStringMessage(service, userID, searchString):
                 idList.append(msg_id['id'])
             return (idList)
     except HttpError as error:
-        print("ocorreu um erro: " + error) 
+        print("ocorreu um erro: %s", error) 
 
 def viewMessage(service, userID, msgID):
     """
@@ -45,14 +46,14 @@ def viewMessage(service, userID, msgID):
     Args:
         service: autenticação da API
         userID: id do usuário, no caso, o cliente, será sempre "me"(eu)
-        msgID: iD do email em questão
-    Returns: os emails em sua parte texto e html
+        msgID: iD da mensagem em questão
+    Returns: o email em sua parte texto e html
     """
     try:
         message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #retorna a mensagem em formato raw codificado em base64
-        msgStr = base64.urlsafe_b64decode(message['raw'].encode('ascii'))
-        mime_msg = email.message_from_bytes(msgStr)
-               
+        mime_msg = email.message_from_bytes(base64.urlsafe_b64decode(message['raw']))
+        
+        print("-----")        
         contentType = mime_msg.get_content_maintype()
         if contentType == 'multipart':
             for part in mime_msg.get_payload():
@@ -60,12 +61,41 @@ def viewMessage(service, userID, msgID):
                     print(part.get_payload())
         elif contentType == 'text':
             print(mime_msg.get_payload())
+        print("-----")
+        
+    except Exception as error:
+        print("ocorreu um erro: %s", error)
+
+def viewMessageSnippet(service, userID, msgID):
+    """
+    Esta função mostra os emails presente na lista de ID, apenas o subject e o snippet da mensagem
+    Args:
+        service: autenticação da API
+        userID: id do usuário, no caso, o cliente, será sempre "me"(eu)
+        msgID: iD da mensagem em questão
+    Returns: o snippet do email
+    """
+    try:
+        message = service.users().messages().get(userId=userID, id=msgID, format='raw').execute() #retorna a mensagem em formato raw codificado em base64
+        mime_msg = email.message_from_bytes(base64.urlsafe_b64decode(message['raw']))
+        
+        #print(mime_msg['from']) mostrar o email do remetente       
+        #print(mime_msg['to'])  mostrar o email do destinatário
+        print(mime_msg['subject'])
+        print(message['snippet'])
+        print(' ')
         
     except Exception as error:
         print("ocorreu um erro: %s", error) 
         
-    
+
+#OBS: necessário arquivo credentials.json na workspace
+#Caso queira refazer a conexão, basta apagar o arquivo token.json na workspace
 def auth():
+    """Conexão com a API para autenticação
+
+    Returns: um objeto "service" para futuras chamadas de API.
+    """
     creds = None
 
     if os.path.exists('token.json'):
@@ -87,11 +117,19 @@ def auth():
     return service
 
 
+#conexão com a API via auth e retornar um objeto (service) 
 service = auth()
+# o nome do usuário e o termo a ser pesquisado.
 userID = 'me'    
-q = "canva" 
+q = "problema" 
 
+#salvar a pesquisa em "IDs" e logo em seguida exibir
 IDs = searchStringMessage(service, userID, q)
+print(IDs)
 
-for Ids in IDs:
-    print(viewMessage(service, userID, Ids))
+#visualizar as mensagens de cada ID.
+for i in IDs:
+    viewMessageSnippet(service, userID, i)
+
+for i in IDs:
+    viewMessage(service, userID, i)
