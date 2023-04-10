@@ -11,9 +11,9 @@ Antes de utilizar a API do Gmail, é necessário obter as credenciais de autenti
 
 ## Funcionalidades
 Este repositório contém os seguintes arquivos para automatizar o gerenciamento de e-mails:
-    1. Leitura de E-mails
-    2. Marcar como Lidos
-    3. Listar E-mails
-    4. Criar Categorias
-    5. Rotular E-mails
+    * Leitura de E-mails
+    * Marcar como Lidos
+    * Listar E-mails
+    * Criar Categorias
+    * Rotular E-mails
 
