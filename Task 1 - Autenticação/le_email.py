@@ -8,6 +8,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import base64
 
+
 #Faz a verificação de credenciais
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 creds = None
