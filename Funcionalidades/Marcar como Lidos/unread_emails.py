@@ -25,9 +25,10 @@ import csv
 # E que lá no console cloud google, foi em 
 # (menu de navegação > API e serviços > Tela de permissão OAuth > Usuários de teste) 
 # e adicionou a sua conta (ou mais que uma) que vai utilizar como tester (usuário)
-# Considero que você executou o primeiro arquivo para fazer a primeira conexão com a api do Gmail
+# Considero que você executou o "connect_python_w_api.py" do nosso repo (EmailClassifier > Integração com Python) 
+# (que é o primeiro arquivo para fazer a primeira conexão com a api do Gmail)
 # E que entre as labels presentes no seu gmail (que você pode verificar no output do primeiro arquivo), há as labels "INBOX" e "UNREAD"
-# E que finalmente você tenha vindo pra esse arquivo
+# Para que então finalmente você tenha vindo pra esse arquivo
 
 # No terminal, caso você não tenha já instalado na sua máquina, execute
 # pip install oauth2client
