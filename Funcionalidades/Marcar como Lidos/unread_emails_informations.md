@@ -1,11 +1,12 @@
 # Parte 2 - Lendo emails Unread
 
 O script de "unread_emails" executa os seguintes passos:
-  -Entra na inbox do gmail
-  -Pega todas os emails não lidos
-  -Extrai detalhes desses emails (remetente, assunto, data, preview e corpo da mensagem.)
-  -Armazena os detalhes num arquivo csv.
-  -Marca os emails como "Lidos"
+
+  	-Entra na inbox do gmail
+    -Pega todas os emails não lidos
+    -Extrai detalhes desses emails (remetente, assunto, data previw, e corpo da mensagem)
+    -Armazena os detalhes num arquivo csv.
+    -Marca os emails como "Lidos"
 
 Observação:
 1. Esse arquivo deve ser colocado junto com a pasta do seu projeto após ter executado o "connect_python_w_api.py"
@@ -21,8 +22,10 @@ e adicionou a sua conta (ou mais que uma) que vai utilizar o script como tester 
 
 
 Instruçòes:
- No terminal, caso você não tenha já instalado na sua máquina, execute:
- pip install oauth2client
- pip install beautifulsoup4
- pip install python-dateutile
+
+  No terminal, caso você não tenha já instalado na sua máquina, execute:
+
+    pip install oauth2client
+    pip install beautifulsoup4
+    pip install python-dateutile
 
