@@ -23,7 +23,7 @@ Requisitos:
 8.  Mude o nome do arquivo para "credentials.json", e coloque-o na pasta do projeto que você utilizará no VSCode.
 9.  Baixe o arquivo "connect_python_w_api.py" e coloque-o na pasta do seu projeto.
 10. Abra a pasta no VSCode
-11. Opcionalmente você pode criar um ambiente virtual https://www.youtube.com/watch?v=m1TYpvIYm74&t=419s&ab_channel=Ot%C3%A1vioMiranda
+11. Opcionalmente você pode criar um ambiente virtual ([tutorial para criar ambiente virtual](https://www.youtube.com/watch?v=m1TYpvIYm74&t=419s&ab_channel=Ot%C3%A1vioMiranda))
 ----> ambiente virtual serve para garantir que um versionamento de um instalável que você vai utilizar pra esse projeto não seja o mesmo versionamento desse instalável para outro projeto, e isso ajuda em momentos que você está trabalhando com um projeto A que precisa de um instalável na versão X, enquanto você trabalha com outro projeto que precisa do mesmo instalável só que na versão Y. Criando um ambiente virtual para um projeto, você garante que não haja colisão entre os ambientes dos dois projetos.
 12. Antes de executar o script de "connect_python_w_api_.py", escreva no terminal "pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib" para instalar os pacotes necessários para a conexão inicial.
 
