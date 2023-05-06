@@ -17,7 +17,7 @@ Este repositório contém os seguintes arquivos para automatizar o gerenciamento
 * [Criar Categorias](https://github.com/bbrunabrito/EmailClassifier/tree/main/Funcionalidades/Cria%C3%A7%C3%A3o%20de%20Categorias)
 * [Rotular E-mails](https://github.com/bbrunabrito/EmailClassifier/tree/main/Funcionalidades/Rotular%20E-mails)
 
-## [Google Apps Scripts](https://github.com/bbrunabrito/EmailClassifier/tree/main/Integra%C3%A7%C3%A3o%20com%20Python)
+## [Google Apps Scripts](https://github.com/bbrunabrito/EmailClassifier/tree/main/Google%20App%20Script)
 Contém informações do Google Apps Scripts e exemplos de usos
 
 ## [Resultado](https://github.com/bbrunabrito/EmailClassifier/tree/main/Build)
