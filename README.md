@@ -21,7 +21,7 @@ Este repositório contém os seguintes arquivos para automatizar o gerenciamento
 Contém informações do Google Apps Scripts e exemplos de usos
 
 ## [Resultado](https://github.com/bbrunabrito/EmailClassifier/tree/main/Build)
-Como resultado dessa estudo, criamos um script que automatiza o gerenciamento a partir de palvavras chaves.
+Como resultado desse estudo, criamos um script que automatiza o gerenciamento da caixa de entrada a partir de palvavras chaves.
 Usamos como escopo e-mails recebidos por profissionais de suporte ao cliente.
 Esse script é capaz de criar categorias e categorizar cada e-mail na categoria correta.
 
